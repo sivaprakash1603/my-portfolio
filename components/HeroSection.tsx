@@ -4,9 +4,7 @@ import { AnimatedItem } from "@/components/animated-item";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { TiltWrapper } from "@/components/TiltWrapper";
-import Hyperspeed from "@/components/Hyperspeed";
 import React, { useMemo, useRef, useEffect, useState } from "react";
-import SplashCursor from "@/components/SplashCursor";
 interface HeroSectionProps {
   typedName: string;
   fullName: string;
@@ -42,11 +40,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       ref={sectionRef}
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20"
     >
-      {inView && (
-        <div className="absolute inset-0 z-10 pointer-events-none">
-          <SplashCursor />
-        </div>
-      )}
+      {/* SplashCursor removed as requested */}
       {/* Hyperspeed background removed as requested */}
     <div className="container relative z-10 px-4 text-center">
       <AnimatedItem animation="fade-up" delay={300}>

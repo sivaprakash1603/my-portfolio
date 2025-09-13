@@ -10,7 +10,7 @@ interface SkillsSectionProps {
 }
 
 export const SkillsSection: React.FC<SkillsSectionProps> = ({ skillsHeading }) => (
-  <AnimatedSection id="skills" className="py-20 bg-black" animation="fade-up">
+  <AnimatedSection id="skills" className="py-20 bg-none" animation="fade-up">
     <div className="container px-4 mx-auto text-center">
       
       <AnimatedItem>

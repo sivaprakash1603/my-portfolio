@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { Github, Linkedin, Mail, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { HeroSection } from "@/components/HeroSection"
+import Particles from "@/components/Particles"
 import { AboutSection } from "@/components/AboutSection"
 import { SkillsSection } from "@/components/SkillsSection"
 import { ProjectsSection } from "@/components/ProjectsSection"
@@ -57,9 +58,32 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-black text-white overflow-x-hidden" style={{ position: 'relative' }}>
+      <div
+        style={{
+          position: 'fixed',
+          inset: 0,
+          zIndex: 0,
+          width: '100vw',
+          height: '100vh',
+          pointerEvents: 'auto',
+        }}
+      >
+        <Particles
+          particleColors={['#40ffaa', '#4079ff', '#40ffaa', '#4079ff', '#40ffaa']}
+          particleCount={1000}
+          particleSpread={10}
+          speed={0.1}
+          particleBaseSize={100}
+          moveParticlesOnHover={true}
+          particleHoverFactor={3}
+          alphaParticles={false}
+          disableRotation={false}
+        />
+      </div>
+      <div style={{ position: 'relative', zIndex: 1 }}>
       
-      <header
+  <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-transparent backdrop-blur-md shadow-md" : "bg-transparent"}`}
       >
         <div className="container mx-auto px-4 h-20 flex items-center justify-between">
@@ -115,6 +139,7 @@ export default function Home() {
       <ProjectsSection projectsHeading={<span>Featured Projects</span>} />
       <ContactSection contactHeading={<span>Get In Touch</span>} />
       <Footer />
+      </div>
     </div>
   )
 }

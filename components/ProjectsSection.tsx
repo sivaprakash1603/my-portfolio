@@ -68,7 +68,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projectsHeadin
   const [tilt, setTilt] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
 
   return (
-  <AnimatedSection id="projects" className="py-20 bg-black" animation="fade-up">
+  <AnimatedSection id="projects" className="py-20 bg-none" animation="fade-up">
       <div className="container px-4 mx-auto">
         <AnimatedItem>
           <NeonText className="text-3xl md:text-4xl font-semibold mb-12 text-center" color="cyan">

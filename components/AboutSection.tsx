@@ -11,7 +11,7 @@ interface AboutSectionProps {
 }
 
 export const AboutSection: React.FC<AboutSectionProps> = ({ aboutHeading, scrollToSection }) => (
-  <AnimatedSection id="about" className="py-20 bg-black" animation="fade-up">
+  <AnimatedSection id="about" className="py-20 bg-none" animation="fade-up">
     <div className="container px-4 mx-auto">
       <div className="flex flex-col md:flex-row gap-12 items-center">
         <AnimatedItem animation="slide-right" className="md:w-1/3">

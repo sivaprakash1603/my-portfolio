@@ -9,7 +9,7 @@ import { SkillsSection } from "@/components/SkillsSection"
 import { ProjectsSection } from "@/components/ProjectsSection"
 import { ContactSection } from "@/components/ContactSection"
 import { Footer } from "@/components/Footer"
-import SplashCursor from "@/components/SplashCursor"
+
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("home")
@@ -58,7 +58,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
-      <SplashCursor />
+      
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-transparent backdrop-blur-md shadow-md" : "bg-transparent"}`}
       >

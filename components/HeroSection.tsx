@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { TiltWrapper } from "@/components/TiltWrapper";
 import Hyperspeed from "@/components/Hyperspeed";
-import React from "react";
-
+import React, { useMemo, useRef, useEffect, useState } from "react";
+import SplashCursor from "@/components/SplashCursor";
 interface HeroSectionProps {
   typedName: string;
   fullName: string;
@@ -21,49 +21,75 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   goToGithub,
   goToLinkedin,
   scrollToSection,
-}) => (
-  <section id="home" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20">
-    <div className="absolute inset-0 z-0 min-h-screen">
-      <Hyperspeed
-        effectOptions={{
-          onSpeedUp: () => { },
-          onSlowDown: () => { },
-          distortion: 'turbulentDistortion',
-          length: 400,
-          roadWidth: 10,
-          islandWidth: 2,
-          lanesPerRoad: 4,
-          fov: 90,
-          fovSpeedUp: 150,
-          speedUp: 2,
-          carLightsFade: 0.4,
-          totalSideLightSticks: 20,
-          lightPairsPerRoadWay: 40,
-          shoulderLinesWidthPercentage: 0.05,
-          brokenLinesWidthPercentage: 0.1,
-          brokenLinesLengthPercentage: 0.5,
-          lightStickWidth: [0.12, 0.5],
-          lightStickHeight: [1.3, 1.7],
-          movingAwaySpeed: [60, 80],
-          movingCloserSpeed: [-120, -160],
-          carLightsLength: [400 * 0.03, 400 * 0.2],
-          carLightsRadius: [0.05, 0.14],
-          carWidthPercentage: [0.3, 0.5],
-          carShiftX: [-0.8, 0.8],
-          carFloorSeparation: [0, 5],
-          colors: {
-            roadColor: 0x080808,
-            islandColor: 0x0a0a0a,
-            background: 0x000000,
-            shoulderLines: 0xFFFFFF,
-            brokenLines: 0xFFFFFF,
-            leftCars: [0xD856BF, 0x6750A2, 0xC247AC],
-            rightCars: [0x03B3C3, 0x0E5EA5, 0x324555],
-            sticks: 0x03B3C3,
-          }
-        }}
-      />
-    </div>
+}) => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(true);
+
+  useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => {
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+    };
+  }, []);
+
+  return (
+    <section
+      id="home"
+      ref={sectionRef}
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20"
+    >
+      {inView && (
+        <div className="absolute inset-0 z-10 pointer-events-none">
+          <SplashCursor />
+        </div>
+      )}
+      <div className="absolute inset-0 z-0 min-h-screen">
+        {inView && (
+          <Hyperspeed
+            effectOptions={{
+              onSpeedUp: () => { },
+              onSlowDown: () => { },
+              distortion: 'turbulentDistortion',
+              length: 400,
+              roadWidth: 10,
+              islandWidth: 2,
+              lanesPerRoad: 4,
+              fov: 90,
+              fovSpeedUp: 150,
+              speedUp: 1,
+              carLightsFade: 0.4,
+              totalSideLightSticks: 20,
+              lightPairsPerRoadWay: 40,
+              shoulderLinesWidthPercentage: 0.05,
+              brokenLinesWidthPercentage: 0.1,
+              brokenLinesLengthPercentage: 0.5,
+              lightStickWidth: [0.12, 0.5],
+              lightStickHeight: [1.3, 1.7],
+              movingAwaySpeed: [60, 80],
+              movingCloserSpeed: [-120, -160],
+              carLightsLength: [400 * 0.03, 400 * 0.2],
+              carLightsRadius: [0.05, 0.14],
+              carWidthPercentage: [0.3, 0.5],
+              carShiftX: [-0.8, 0.8],
+              carFloorSeparation: [0, 5],
+              colors: {
+                roadColor: 0x080808,
+                islandColor: 0x0a0a0a,
+                background: 0x000000,
+                shoulderLines: 0xFFFFFF,
+                brokenLines: 0xFFFFFF,
+                leftCars: [0xD856BF, 0x6750A2, 0xC247AC],
+                rightCars: [0x03B3C3, 0x0E5EA5, 0x324555],
+                sticks: 0x03B3C3,
+              }
+            }}
+          />
+        )}
+      </div>
     <div className="container relative z-10 px-4 text-center">
       <AnimatedItem animation="fade-up" delay={300}>
         <TiltWrapper maxTilt={10} scale={1.01}>
@@ -138,4 +164,5 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       </Button>
     </AnimatedItem>
   </section>
-);
+  );
+}

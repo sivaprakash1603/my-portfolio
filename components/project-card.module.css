@@ -1,0 +1,230 @@
+/* Staggered floating animation delays for each card */
+.project-card-floating-0 {
+  animation-delay: 0s;
+}
+.project-card-floating-1 {
+  animation-delay: 0.7s;
+}
+.project-card-floating-2 {
+  animation-delay: 1.4s;
+}
+.project-card-floating-3 {
+  animation-delay: 2.1s;
+}
+.project-card-floating-4 {
+  animation-delay: 2.8s;
+}
+.project-card-floating-5 {
+  animation-delay: 3.5s;
+}
+.project-card-floating-6 {
+  animation-delay: 4.2s;
+}
+.project-card-floating-7 {
+  animation-delay: 4.9s;
+}
+.project-card-floating-8 {
+  animation-delay: 5.6s;
+}
+.project-card-floating-9 {
+  animation-delay: 6.3s;
+}
+@keyframes projectCardFloat {
+  0% {
+    transform: translateY(-10px) scale3d(1.03, 1.03, 1.03);
+  }
+  50% {
+    transform: translateY(6px) scale3d(1.03, 1.03, 1.03);
+  }
+  100% {
+    transform: translateY(-10px) scale3d(1.03, 1.03, 1.03);
+  }
+}
+.project-card-floating-0 {
+  animation-delay: 0.13s;
+}
+.project-card-floating-1 {
+  animation-delay: 0.77s;
+}
+.project-card-floating-2 {
+  animation-delay: 1.41s;
+}
+.project-card-floating-3 {
+  animation-delay: 2.09s;
+}
+.project-card-floating-4 {
+  animation-delay: 2.73s;
+}
+.project-card-floating-5 {
+  animation-delay: 3.37s;
+}
+.project-card-floating-6 {
+  animation-delay: 4.01s;
+}
+.project-card-floating-7 {
+  animation-delay: 4.69s;
+}
+.project-card-floating-8 {
+  animation-delay: 5.33s;
+}
+.project-card-floating-9 {
+  animation-delay: 5.97s;
+}
+.project-card-floating {
+  animation: projectCardFloat 4s ease-in-out infinite;
+}
+/* Theme color glows for project card hover */
+.project-card-bright-hover-cyan:hover {
+  box-shadow: 0 0 32px 0 rgba(56, 189, 248, 0.45),
+    0 2px 16px 0 rgba(56, 189, 248, 0.18), 0 0 8px 0 rgba(56, 189, 248, 0.25);
+}
+.project-card-bright-hover-pink:hover {
+  box-shadow: 0 0 32px 0 rgba(236, 72, 153, 0.45),
+    0 2px 16px 0 rgba(236, 72, 153, 0.18), 0 0 8px 0 rgba(236, 72, 153, 0.25);
+}
+.project-card-bright-hover-purple:hover {
+  box-shadow: 0 0 32px 0 rgba(168, 85, 247, 0.45),
+    0 2px 16px 0 rgba(168, 85, 247, 0.18), 0 0 8px 0 rgba(168, 85, 247, 0.25);
+}
+.project-card-bright-hover-green:hover {
+  box-shadow: 0 0 32px 0 rgba(34, 197, 94, 0.45),
+    0 2px 16px 0 rgba(34, 197, 94, 0.18), 0 0 8px 0 rgba(34, 197, 94, 0.25);
+}
+.project-card-bright-hover-orange:hover {
+  box-shadow: 0 0 32px 0 rgba(249, 115, 22, 0.45),
+    0 2px 16px 0 rgba(249, 115, 22, 0.18), 0 0 8px 0 rgba(249, 115, 22, 0.25);
+}
+.project-card-bright-hover-blue:hover {
+  box-shadow: 0 0 32px 0 rgba(59, 130, 246, 0.45),
+    0 2px 16px 0 rgba(59, 130, 246, 0.18), 0 0 8px 0 rgba(59, 130, 246, 0.25);
+}
+/* Bright glow on project card hover */
+.project-card-bright-hover {
+  transition: box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.project-card-bright-hover:hover {
+  box-shadow: 0 0 32px 0 rgba(56, 189, 248, 0.45),
+    0 0 64px 0 rgba(236, 72, 153, 0.25), 0 2px 16px 0 rgba(255, 255, 255, 0.1);
+}
+/* Skill tag animation for ProjectCard */
+.project-skill-animate {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(12px) scale(0.95);
+  animation: skillFadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Staggered animation delays for up to 12 skills */
+.project-skill-delay-0 {
+  animation-delay: 0ms;
+}
+.project-skill-delay-1 {
+  animation-delay: 80ms;
+}
+.project-skill-delay-2 {
+  animation-delay: 160ms;
+}
+.project-skill-delay-3 {
+  animation-delay: 240ms;
+}
+.project-skill-delay-4 {
+  animation-delay: 320ms;
+}
+.project-skill-delay-5 {
+  animation-delay: 400ms;
+}
+.project-skill-delay-6 {
+  animation-delay: 480ms;
+}
+.project-skill-delay-7 {
+  animation-delay: 560ms;
+}
+.project-skill-delay-8 {
+  animation-delay: 640ms;
+}
+.project-skill-delay-9 {
+  animation-delay: 720ms;
+}
+.project-skill-delay-10 {
+  animation-delay: 800ms;
+}
+.project-skill-delay-11 {
+  animation-delay: 880ms;
+}
+
+/* Hover animation for skill tags */
+.project-skill-hover {
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), background 0.25s;
+}
+.project-skill-hover:hover {
+  transform: scale(1.12) rotate(-3deg);
+  box-shadow: 0 2px 16px 0 rgba(0, 255, 255, 0.18),
+    0 1.5px 8px 0 rgba(0, 0, 0, 0.1);
+  background: linear-gradient(
+    90deg,
+    rgba(56, 189, 248, 0.1) 0%,
+    rgba(236, 72, 153, 0.1) 100%
+  );
+  filter: brightness(1.15) saturate(1.2);
+  z-index: 1;
+}
+/* Skill tag animation for ProjectCard */
+.project-skill-animate {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(12px) scale(0.95);
+  animation: skillFadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Staggered animation delays for up to 12 skills */
+.project-skill-delay-0 {
+  animation-delay: 0ms;
+}
+.project-skill-delay-1 {
+  animation-delay: 80ms;
+}
+.project-skill-delay-2 {
+  animation-delay: 160ms;
+}
+.project-skill-delay-3 {
+  animation-delay: 240ms;
+}
+.project-skill-delay-4 {
+  animation-delay: 320ms;
+}
+.project-skill-delay-5 {
+  animation-delay: 400ms;
+}
+.project-skill-delay-6 {
+  animation-delay: 480ms;
+}
+.project-skill-delay-7 {
+  animation-delay: 560ms;
+}
+.project-skill-delay-8 {
+  animation-delay: 640ms;
+}
+.project-skill-delay-9 {
+  animation-delay: 720ms;
+}
+.project-skill-delay-10 {
+  animation-delay: 800ms;
+}
+.project-skill-delay-11 {
+  animation-delay: 880ms;
+}
+/* Skill tag animation for ProjectCard */
+.project-skill-animate {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(12px) scale(0.95);
+  animation: skillFadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes skillFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

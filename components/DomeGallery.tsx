@@ -163,7 +163,7 @@ export default function DomeGallery({
 }: DomeGalleryProps) {
   // Automatic rotation effect
   useEffect(() => {
-    if (!autoRotate) return;
+    if (typeof window === 'undefined' || !autoRotate) return;
     let lastTime = performance.now();
     let stopped = false;
     function step(now: number) {
@@ -236,9 +236,10 @@ export default function DomeGallery({
   const lockedRadiusRef = useRef<number | null>(null);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
     const root = rootRef.current;
     if (!root) return;
-    const ro = new ResizeObserver(entries => {
+    const ro = new window.ResizeObserver(entries => {
       const cr = entries[0].contentRect;
       const w = Math.max(1, cr.width),
         h = Math.max(1, cr.height);

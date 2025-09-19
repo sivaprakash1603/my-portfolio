@@ -4,6 +4,7 @@ import { NeonText } from "@/components/neon-text";
 import { ProjectCard } from "@/components/project-card";
 import { useState } from "react";
 import React from "react";
+import GradientText from "@/components/GradientText";
 
 interface ProjectsSectionProps {
   projectsHeading: React.ReactNode;
@@ -70,11 +71,18 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projectsHeadin
   return (
   <AnimatedSection id="projects" className="py-20 bg-none" animation="fade-up">
       <div className="container px-4 mx-auto">
-        <AnimatedItem>
-          <NeonText className="text-3xl md:text-4xl font-semibold mb-12 text-center" color="cyan">
-            {projectsHeading || <span className="opacity-40">Featured Projects</span>}
-          </NeonText>
-        </AnimatedItem>
+       {/* Large Heading Section */}
+           <section id="about" className="min-h-screen flex flex-col justify-center items-center">
+             <GradientText
+               colors={["#40ffa9", "#4079ff", "#40ffaa", "#4079ff", "#40ffa9"]}
+               animationSpeed={10}
+               showBorder={false}
+               className="custom-class text-5xl md:text-9xl font-bold mb-4 select-none cursor-none"
+             >
+                My Projects
+             </GradientText>
+           </section>
+           <div className="h-[250px]"></div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => {
             // Deterministic float delay based on index (SSR-safe)

@@ -790,10 +790,10 @@ export default function DomeGallery({
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: cssStyles }} />
+  <style dangerouslySetInnerHTML={{ __html: cssStyles + `\n.item__image { background: rgba(255,255,255,0.7); transition: background 0.2s; } .item__image:hover { background: #fff !important; }` }} />
       <div
         ref={rootRef}
-        className="sphere-root relative w-full h-full"
+  className="sphere-root relative w-full h-full aspect-square"
         style={
           {
             ['--segments-x' as any]: segments,
@@ -807,10 +807,11 @@ export default function DomeGallery({
       >
         <main
           ref={mainRef}
-          className="absolute inset-0 grid place-items-center overflow-hidden select-none bg-transparent"
+          className="absolute inset-0 grid place-items-center select-none bg-transparent aspect-square w-full h-full"
           style={{
             touchAction: 'none',
-            WebkitUserSelect: 'none'
+            WebkitUserSelect: 'none',
+            overflow: 'visible'
           }}
         >
           <div className="stage">
@@ -854,7 +855,9 @@ export default function DomeGallery({
                     style={{
                       inset: '10px',
                       borderRadius: `var(--tile-radius, ${imageBorderRadius})`,
-                      backfaceVisibility: 'hidden'
+                      backfaceVisibility: 'hidden',
+                      background: 'rgba(255,255,255,0.7)',
+                      boxShadow: '0 2px 8px 0 rgba(0,0,0,0.04)'
                     }}
                   >
                     <img

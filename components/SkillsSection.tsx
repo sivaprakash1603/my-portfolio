@@ -3,6 +3,7 @@ import { AnimatedItem } from "@/components/animated-item";
 import { NeonText } from "@/components/neon-text";
 import DomeGallery from "@/components/DomeGallery";
 import { TiltWrapper } from "./TiltWrapper";
+import GradientText from "@/components/GradientText";
 import React from "react";
 
 interface SkillsSectionProps {
@@ -13,18 +14,23 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skillsHeading }) =
   <AnimatedSection id="skills" className="py-20 bg-none" animation="fade-up">
     <div className="container px-4 mx-auto text-center">
 
-      <AnimatedItem>
-        <TiltWrapper maxTilt={8} scale={1.01} className="inline-block">
-          <NeonText className="text-3xl md:text-4xl font-semibold mb-12 select-none cursor-default" color="cyan">
-            {skillsHeading || <span className="opacity-40">My Skills</span>}
-          </NeonText>
-        </TiltWrapper>
-      </AnimatedItem>
+      {/* Large Heading Section */}
+          <section id="about" className="min-h-screen flex flex-col justify-center items-center">
+            <GradientText
+              colors={["#40ffa9", "#4079ff", "#40ffaa", "#4079ff", "#40ffa9"]}
+              animationSpeed={10}
+              showBorder={false}
+              className="custom-class text-5xl md:text-9xl font-bold mb-4 select-none cursor-none"
+            >
+              My Skills
+            </GradientText>
+          </section>
+          <div className="h-[250px]"></div>
 
       <AnimatedItem animation="fade-up" delay={200}>
         <div className="mb-12">
 
-          <div className="flex justify-center h-[500px]">
+          <div className="flex justify-center items-center aspect-square w-full max-w-[700px] mx-auto" style={{height: 'min(80vw, 700px)'}}>
             <DomeGallery
               images={[
                 // Frontend
@@ -66,9 +72,9 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skillsHeading }) =
               ]}
               fit={0.8}
               minRadius={1000}
-              segments={48}
+              segments={38}
               grayscale={false}
-              maxVerticalRotationDeg={0}
+              maxVerticalRotationDeg={2}
               dragDampening={2}
               autoRotate={true}
               autoRotateSpeed={3}

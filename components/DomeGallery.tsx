@@ -790,10 +790,10 @@ export default function DomeGallery({
 
   return (
     <>
-  <style dangerouslySetInnerHTML={{ __html: cssStyles + `\n.item__image { background: rgba(255,255,255,0.7); transition: background 0.2s; } .item__image:hover { background: #fff !important; }` }} />
+      <style dangerouslySetInnerHTML={{ __html: cssStyles + `\n.item__image { background: rgba(255,255,255,0.7); transition: background 0.2s; } .item__image:hover { background: #fff !important; }` }} />
       <div
         ref={rootRef}
-  className="sphere-root relative w-full h-full aspect-square"
+        className="sphere-root relative w-full h-full aspect-square"
         style={
           {
             ['--segments-x' as any]: segments,

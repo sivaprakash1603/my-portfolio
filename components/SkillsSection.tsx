@@ -15,22 +15,22 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skillsHeading }) =
     <div className="container px-4 mx-auto text-center">
 
       {/* Large Heading Section */}
-          <section id="about" className="min-h-screen flex flex-col justify-center items-center">
-            <GradientText
-              colors={["#40ffa9", "#4079ff", "#40ffaa", "#4079ff", "#40ffa9"]}
-              animationSpeed={10}
-              showBorder={false}
-              className="custom-class text-5xl md:text-9xl font-bold mb-4 select-none cursor-none"
-            >
-              My Skills
-            </GradientText>
-          </section>
-          <div className="h-[250px]"></div>
+      <section id="about" className="min-h-screen flex flex-col justify-center items-center">
+        <GradientText
+          colors={["#40ffa9", "#4079ff", "#40ffaa", "#4079ff", "#40ffa9"]}
+          animationSpeed={10}
+          showBorder={false}
+          className="custom-class text-5xl md:text-9xl font-bold mb-4 select-none cursor-none"
+        >
+          My Skills
+        </GradientText>
+      </section>
+      <div className="h-[250px]"></div>
 
       <AnimatedItem animation="fade-up" delay={200}>
         <div className="mb-12">
 
-          <div className="flex justify-center items-center aspect-square w-full max-w-[700px] mx-auto" style={{height: 'min(80vw, 700px)'}}>
+          <div className="flex justify-center items-center aspect-square w-full max-w-[700px] mx-auto" style={{ height: 'min(80vw, 700px)' }}>
             <DomeGallery
               images={[
                 // Frontend

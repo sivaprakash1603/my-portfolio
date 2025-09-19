@@ -72,7 +72,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skillsHeading }) =
               ]}
               fit={0.8}
               minRadius={1000}
-              segments={38}
+              segments={(window.innerWidth > 768 )? 38 : 52}
               grayscale={false}
               maxVerticalRotationDeg={2}
               dragDampening={2}

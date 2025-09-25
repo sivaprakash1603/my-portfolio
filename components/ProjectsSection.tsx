@@ -5,6 +5,7 @@ import { ProjectCard } from "@/components/project-card";
 import { useState } from "react";
 import React from "react";
 import GradientText from "@/components/GradientText";
+import AnimatedHeading from "@/components/AnimatedHeading";
 
 interface ProjectsSectionProps {
   projectsHeading: React.ReactNode;
@@ -73,14 +74,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projectsHeadin
       <div className="container px-4 mx-auto">
        {/* Large Heading Section */}
            <section id="about" className="min-h-screen flex flex-col justify-center items-center">
-             <GradientText
-               colors={["#40ffa9", "#4079ff", "#40ffaa", "#4079ff", "#40ffa9"]}
-               animationSpeed={10}
-               showBorder={false}
-               className="custom-class text-5xl md:text-9xl font-bold mb-4 select-none cursor-none"
-             >
-                My Projects
-             </GradientText>
+             <AnimatedHeading>My Projects</AnimatedHeading>
            </section>
            <div className="h-[250px]"></div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

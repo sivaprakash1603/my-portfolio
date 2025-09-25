@@ -1,6 +1,7 @@
 import { AnimatedSection } from "@/components/animated-section";
 import { AnimatedItem } from "@/components/animated-item";
 import GradientText from "@/components/GradientText";
+import AnimatedHeading from "@/components/AnimatedHeading";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import { TiltWrapper } from "@/components/TiltWrapper";
@@ -14,14 +15,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ aboutHeading, scroll
   <>
     {/* Large Heading Section */}
     <section id="about" className="min-h-screen flex flex-col justify-center items-center">
-      <GradientText
-        colors={["#40ffa9", "#4079ff", "#40ffaa", "#4079ff", "#40ffa9"]}
-        animationSpeed={10}
-        showBorder={false}
-        className="custom-class text-5xl md:text-9xl font-bold mb-4 select-none cursor-none"
-      >
-        About Me
-      </GradientText>
+      <AnimatedHeading>About Me</AnimatedHeading>
     </section>
     <div className="h-[250px]"></div>
 

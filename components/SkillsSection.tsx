@@ -4,6 +4,7 @@ import { NeonText } from "@/components/neon-text";
 import DomeGallery from "@/components/DomeGallery";
 import { TiltWrapper } from "./TiltWrapper";
 import GradientText from "@/components/GradientText";
+import AnimatedHeading from "@/components/AnimatedHeading";
 import React from "react";
 
 interface SkillsSectionProps {
@@ -26,14 +27,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skillsHeading }) =
       <div className="container px-4 mx-auto text-center">
         {/* Large Heading Section */}
         <section id="about" className="min-h-screen flex flex-col justify-center items-center">
-          <GradientText
-            colors={["#40ffa9", "#4079ff", "#40ffaa", "#4079ff", "#40ffa9"]}
-            animationSpeed={10}
-            showBorder={false}
-            className="custom-class text-5xl md:text-9xl font-bold mb-4 select-none cursor-none"
-          >
-            My Skills
-          </GradientText>
+          <AnimatedHeading>My Skills</AnimatedHeading>
         </section>
         <div className="h-[250px]"></div>
         <AnimatedItem animation="fade-up" delay={200}>
